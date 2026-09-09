@@ -510,48 +510,205 @@
        JAVASCRIPT
   ================================== -->
 
-  <script>
+ <script>
+  const music = document.getElementById("weddingMusic");
+  const musicBtn = document.getElementById("musicBtn");
 
-    const music = document.getElementById("weddingMusic");
-    const musicBtn = document.getElementById("musicBtn");
+  let playing = false;
+  let wasPlayingBeforeHidden = false;
 
-    let playing = false;
+  /* =========================
+     UPDATE MUSIC BUTTON
+  ========================= */
 
-    musicBtn.addEventListener("click", function () {
+  function updateMusicButton() {
+    if (playing) {
+  musicBtn.textContent = "🔊";
+  musicBtn.classList.add("playing");
+} else {
+  musicBtn.textContent = "🔇";
+  musicBtn.classList.remove("playing");
+}
+  }
 
-      if (playing === false) {
 
-        music.play()
-          .then(function () {
+  /* =========================
+     START MUSIC
+  ========================= */
 
-            playing = true;
+  function startMusic() {
 
-            musicBtn.textContent = "⏸️";
+    music.play()
+      .then(function () {
 
-            musicBtn.classList.add("playing");
+        playing = true;
 
-          })
-          .catch(function (error) {
+        // Remember that the visitor was listening
+        localStorage.setItem("memorialMusicPlaying", "true");
 
-            console.log("Music could not start:", error);
+        updateMusicButton();
 
-          });
+      })
+      .catch(function (error) {
 
-      } else {
+        console.log("Music could not start:", error);
+
+      });
+
+  }
+
+
+  /* =========================
+     PAUSE MUSIC
+  ========================= */
+
+  function pauseMusic() {
+
+    music.pause();
+
+    playing = false;
+
+    localStorage.setItem("memorialMusicPlaying", "false");
+
+    updateMusicButton();
+
+  }
+
+
+  /* =========================
+     TOGGLE MUSIC BUTTON
+  ========================= */
+
+  musicBtn.addEventListener("click", function (event) {
+
+    // Prevent the document click event from firing
+    event.stopPropagation();
+
+    if (playing) {
+
+      pauseMusic();
+
+    } else {
+
+      startMusic();
+
+    }
+
+  });
+
+
+  /* =========================
+     CLICK / TOUCH ANYWHERE
+     TO START MUSIC
+  ========================= */
+
+  document.addEventListener("click", function (event) {
+
+    // Don't trigger twice when music button is clicked
+    if (event.target.closest("#musicBtn")) {
+      return;
+    }
+
+    if (!playing) {
+      startMusic();
+    }
+
+  });
+
+
+  document.addEventListener("touchstart", function (event) {
+
+    // Don't trigger twice when music button is touched
+    if (event.target.closest("#musicBtn")) {
+      return;
+    }
+
+    if (!playing) {
+      startMusic();
+    }
+
+  }, { passive: true });
+
+
+  /* =========================
+     PAUSE WHEN LEAVING PAGE
+  ========================= */
+
+  document.addEventListener("visibilitychange", function () {
+
+    if (document.hidden) {
+
+      // Remember whether music was playing
+      wasPlayingBeforeHidden = playing;
+
+      if (playing) {
 
         music.pause();
 
         playing = false;
 
-        musicBtn.textContent = "🎵";
-
-        musicBtn.classList.remove("playing");
+        updateMusicButton();
 
       }
 
-    });
+    } else {
 
-  </script>
+      // Page has become visible again
+
+      if (wasPlayingBeforeHidden) {
+
+        startMusic();
+
+      }
+
+    }
+
+  });
+
+
+  /* =========================
+     REMEMBER MUSIC STATE
+  ========================= */
+
+  window.addEventListener("beforeunload", function () {
+
+    if (playing) {
+
+      localStorage.setItem("memorialMusicPlaying", "true");
+
+    } else {
+
+      localStorage.setItem("memorialMusicPlaying", "false");
+
+    }
+
+  });
+
+
+  /* =========================
+     INITIAL ICON STATE
+  ========================= */
+
+  updateMusicButton();
+
+
+  /* =========================
+     RESTORE MUSIC AFTER
+     PAGE IS OPENED AGAIN
+  ========================= */
+
+  const savedMusicState =
+    localStorage.getItem("memorialMusicPlaying");
+
+  if (savedMusicState === "true") {
+
+    // Browsers normally block automatic audio.
+    // The next click/touch will start the music.
+    musicBtn.textContent = "🎵";
+
+  }
+
+</script>
 
 </body>
 </html>
