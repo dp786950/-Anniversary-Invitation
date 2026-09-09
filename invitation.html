@@ -1808,17 +1808,11 @@ footer{
    MUSIC SYSTEM
 ===================================================== */
 
-const music =
-  document.getElementById("memorialMusic");
-
-const musicBtn =
-  document.getElementById("musicBtn");
-
+const music = document.getElementById("memorialMusic");
+const musicBtn = document.getElementById("musicBtn");
 
 let playing = false;
-
 let wasPlayingBeforeHidden = false;
-
 let positionRestored = false;
 
 
@@ -1826,9 +1820,9 @@ let positionRestored = false;
    UPDATE MUSIC BUTTON
 ===================================================== */
 
-function updateMusicButton(){
+function updateMusicButton() {
 
-  if(playing){
+  if (playing) {
 
     musicBtn.textContent = "🔊";
 
@@ -1839,7 +1833,7 @@ function updateMusicButton(){
       "Pause memorial music"
     );
 
-  }else{
+  } else {
 
     musicBtn.textContent = "🔇";
 
@@ -1856,38 +1850,29 @@ function updateMusicButton(){
 
 
 /* =====================================================
-   RESTORE SAVED POSITION
-   Runs only once
+   RESTORE SAVED MUSIC POSITION
 ===================================================== */
 
-function restoreMusicPosition(){
+function restoreMusicPosition() {
 
-  if(positionRestored){
+  if (positionRestored) {
     return;
   }
 
   const savedTime =
-    localStorage.getItem(
-      "memorialMusicTime"
-    );
+    localStorage.getItem("memorialMusicTime");
 
-  if(savedTime !== null){
+  if (savedTime !== null) {
 
-    const time =
-      parseFloat(savedTime);
+    const time = parseFloat(savedTime);
 
-    if(
-      !isNaN(time) &&
-      time >= 0
-    ){
+    if (!isNaN(time) && time >= 0) {
 
-      try{
+      try {
 
         music.currentTime = time;
 
-        positionRestored = true;
-
-      }catch(error){
+      } catch (error) {
 
         console.log(
           "Could not restore music position:",
@@ -1898,12 +1883,9 @@ function restoreMusicPosition(){
 
     }
 
-  }else{
-
-    positionRestored = true;
-
   }
 
+  positionRestored = true;
 }
 
 
@@ -1911,11 +1893,12 @@ function restoreMusicPosition(){
    START MUSIC
 ===================================================== */
 
-function startMusic(){
+function startMusic() {
+
+  restoreMusicPosition();
 
   music.play()
-
-    .then(function(){
+    .then(function () {
 
       playing = true;
 
@@ -1927,13 +1910,16 @@ function startMusic(){
       updateMusicButton();
 
     })
-
-    .catch(function(error){
+    .catch(function (error) {
 
       console.log(
-        "Music could not start:",
+        "Browser blocked music playback:",
         error
       );
+
+      playing = false;
+
+      updateMusicButton();
 
     });
 
@@ -1944,24 +1930,21 @@ function startMusic(){
    PAUSE MUSIC
 ===================================================== */
 
-function pauseMusic(){
+function pauseMusic() {
 
   music.pause();
 
   playing = false;
-
 
   localStorage.setItem(
     "memorialMusicPlaying",
     "false"
   );
 
-
   localStorage.setItem(
     "memorialMusicTime",
     music.currentTime
   );
-
 
   updateMusicButton();
 
@@ -1974,16 +1957,15 @@ function pauseMusic(){
 
 musicBtn.addEventListener(
   "click",
-  function(event){
+  function (event) {
 
     event.stopPropagation();
 
-
-    if(playing){
+    if (playing) {
 
       pauseMusic();
 
-    }else{
+    } else {
 
       startMusic();
 
@@ -1994,27 +1976,21 @@ musicBtn.addEventListener(
 
 
 /* =====================================================
-   CLICK ANYWHERE
-   START MUSIC
+   CLICK ANYWHERE TO START MUSIC
 ===================================================== */
 
 document.addEventListener(
   "click",
-  function(event){
+  function (event) {
 
-    if(
+    if (
       event.target.closest("#musicBtn")
-    ){
-
+    ) {
       return;
-
     }
 
-
-    if(!playing){
-
+    if (!playing) {
       startMusic();
-
     }
 
   }
@@ -2022,42 +1998,37 @@ document.addEventListener(
 
 
 /* =====================================================
-   TOUCH ANYWHERE
+   TOUCH ANYWHERE TO START MUSIC
 ===================================================== */
 
 document.addEventListener(
   "touchstart",
-  function(event){
+  function (event) {
 
-    if(
+    if (
       event.target.closest("#musicBtn")
-    ){
-
+    ) {
       return;
-
     }
 
-
-    if(!playing){
-
+    if (!playing) {
       startMusic();
-
     }
 
   },
   {
-    passive:true
+    passive: true
   }
 );
 
 
 /* =====================================================
-   MUSIC READY
+   AUDIO READY
 ===================================================== */
 
 music.addEventListener(
   "loadedmetadata",
-  function(){
+  function () {
 
     restoreMusicPosition();
 
@@ -2066,13 +2037,13 @@ music.addEventListener(
 
 
 /* =====================================================
-   SAVE MUSIC POSITION
+   SAVE CURRENT POSITION
 ===================================================== */
 
 setInterval(
-  function(){
+  function () {
 
-    if(playing){
+    if (playing && !music.paused) {
 
       localStorage.setItem(
         "memorialMusicTime",
@@ -2087,53 +2058,42 @@ setInterval(
 
 
 /* =====================================================
-   VISIBILITY CHANGE
+   TAB / PAGE VISIBILITY
 ===================================================== */
 
 document.addEventListener(
   "visibilitychange",
-  function(){
+  function () {
 
-    if(document.hidden){
+    if (document.hidden) {
 
       wasPlayingBeforeHidden =
-        playing;
+        playing && !music.paused;
 
-
-      if(playing){
+      if (wasPlayingBeforeHidden) {
 
         localStorage.setItem(
           "memorialMusicTime",
           music.currentTime
         );
 
-
         music.pause();
 
-
         playing = false;
-
 
         updateMusicButton();
 
       }
 
-    }else{
+    } else {
 
       /*
-        We deliberately do not force autoplay here.
-        The browser may block playback after a page
-        becomes visible again.
-      */
+       * Try to resume when the user returns.
+       */
 
-      if(
-        wasPlayingBeforeHidden &&
-        !music.paused
-      ){
+      if (wasPlayingBeforeHidden) {
 
-        playing = true;
-
-        updateMusicButton();
+        startMusic();
 
       }
 
@@ -2149,13 +2109,12 @@ document.addEventListener(
 
 window.addEventListener(
   "beforeunload",
-  function(){
+  function () {
 
     localStorage.setItem(
       "memorialMusicTime",
       music.currentTime
     );
-
 
     localStorage.setItem(
       "memorialMusicPlaying",
@@ -2169,24 +2128,16 @@ window.addEventListener(
 
 
 /* =====================================================
-   INITIALIZE MUSIC
+   INITIALIZE
 ===================================================== */
 
 updateMusicButton();
 
-
-/*
-  Restore the saved position when the page loads.
-*/
-
-if(
-  music.readyState >= 1
-){
+if (music.readyState >= 1) {
 
   restoreMusicPosition();
 
 }
-
 
 /* =====================================================
    COUNTDOWN
