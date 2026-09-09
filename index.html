@@ -481,13 +481,14 @@
       </p>
 
       <!-- GOES TO SECOND PAGE -->
-      <a
-        href="invitation.html"
-        class="view-invitation"
-      >
-        VIEW INVITATION
-        <span>→</span>
-      </a>
+     <a 
+  href="invitation.html" 
+  class="view-invitation" 
+  id="viewInvitation"
+>
+  VIEW INVITATION
+  <span>→</span>
+</a>
 
     </div>
 
@@ -707,8 +708,29 @@
     musicBtn.textContent = "🎵";
 
   }
+/* =========================
+   SAVE MUSIC BEFORE
+   GOING TO INVITATION PAGE
+========================= */
+
+const viewInvitation = document.getElementById("viewInvitation");
+
+viewInvitation.addEventListener("click", function () {
+
+  // Save current music position
+  localStorage.setItem(
+    "memorialMusicTime",
+    music.currentTime
+  );
+
+  // Remember whether music was playing
+  localStorage.setItem(
+    "memorialMusicPlaying",
+    playing ? "true" : "false"
+  );
+
+});
 
 </script>
-
 </body>
 </html>
