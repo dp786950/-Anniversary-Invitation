@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8b1732">
+<meta name="description" content="One Year Anniversary Memorial Invitation in loving memory of Late Wilhelmina Akua Ampofoa Yirenkyi.">
+<title>1 Year Anniversary | Late Wilhelmina Akua Ampofoa Yirenkyi</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --burgundy:#7f1730;
+  --burgundy-dark:#4d1020;
+  --gold:#bd8a32;
+  --gold-light:#ead4a2;
+  --ink:#211a1b;
+  --muted:#6f6264;
+  --cream:#fffdf9;
+  --soft:#f8f4ee;
+  --white:#fff;
+  --shadow:0 24px 70px rgba(70,35,40,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Montserrat",sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.music-btn{
+  position:fixed;right:20px;top:20px;z-index:1000;
+  width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.8);
+  background:rgba(77,16,32,.88);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18);
+  backdrop-filter:blur(10px);transition:.3s;
+}
+.music-btn:hover{transform:scale(1.08)}
+.hero{
+  min-height:100vh;position:relative;display:grid;place-items:center;
+  overflow:hidden;text-align:center;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(234,212,162,.35),transparent 28%),
+    radial-gradient(circle at 90% 85%,rgba(127,23,48,.08),transparent 32%),
+    linear-gradient(135deg,#fff,#faf7f1);
+}
+
+.details-btn-wrap{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+}
+
+.details-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 24px;
+  border-radius:50px;
+  border:1px solid var(--gold);
+  background:rgba(255,255,255,.78);
+  color:var(--burgundy);
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:1.8px;
+  box-shadow:0 10px 28px rgba(70,35,40,.10);
+  backdrop-filter:blur(8px);
+  transition:.3s ease;
+}
+
+.details-btn:hover{
+  transform:translateY(-4px);
+  background:var(--burgundy);
+  color:#fff;
+  box-shadow:0 15px 35px rgba(127,23,48,.20);
+}
+
+.details-arrow{
+  font-size:1.1rem;
+  line-height:1;
+  transition:transform .3s ease;
+}
+
+.details-btn:hover .details-arrow{
+  transform:translateY(4px);
+}
+.back-btn{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  z-index:1000;
+
+  width:52px;
+  height:52px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:var(--burgundy);
+  background:rgba(255,255,255,.35);
+
+  border:1px solid rgba(255,255,255,.8);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 8px 25px rgba(70,35,40,.15),
+    inset 0 1px 2px rgba(255,255,255,.8);
+
+  font-size:1.7rem;
+  font-weight:500;
+
+  transition:.3s ease;
+}
+
+.back-btn:hover{
+  transform:translateX(-4px) scale(1.08);
+  background:rgba(255,255,255,.65);
+
+  box-shadow:
+    0 12px 30px rgba(70,35,40,.20),
+    inset 0 1px 2px rgba(255,255,255,.9);
+}
+
+.back-btn:active{
+  transform:scale(.92);
+}
+
+@media(max-width:560px){
+  .back-btn{
+    width:46px;
+    height:46px;
+    left:15px;
+    bottom:15px;
+    font-size:1.5rem;
+  }
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border:1px solid rgba(189,138,50,.25);border-radius:50%;
+}
+.hero:before{width:620px;height:620px;left:-330px;top:-280px}
+.hero:after{width:500px;height:500px;right:-270px;bottom:-240px}
+.ornament{
+  position:absolute;color:var(--gold);font-size:4rem;opacity:.25;
+}
+.o1{left:7%;top:18%}.o2{right:7%;top:26%;transform:rotate(180deg)}
+.o3{left:10%;bottom:13%;transform:rotate(-20deg)}
+.hero-inner{width:min(1000px,92%);position:relative;z-index:2;padding:70px 20px}
+.eyebrow{letter-spacing:5px;font-size:.72rem;font-weight:700;color:var(--burgundy);margin-bottom:24px}
+.hero h1{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,12vw,8rem);
+  line-height:.82;font-weight:500;color:var(--gold);margin-bottom:15px;
+}
+.hero h2{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,6vw,4.5rem);
+  color:var(--burgundy-dark);font-weight:600;line-height:1.05;
+}
+.hero .memory{margin:28px auto 8px;letter-spacing:3px;font-size:.78rem;font-weight:600}
+.hero .name{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,6vw,4.5rem);
+  color:var(--burgundy);font-weight:600;line-height:1.05;
+}
+.hero-date{
+  margin-top:30px;font-weight:700;letter-spacing:3px;color:var(--ink);
+}
+.divider{display:flex;align-items:center;gap:15px;justify-content:center;margin:28px auto}
+.divider:before,.divider:after{content:"";height:1px;width:110px;background:var(--gold)}
+.divider span{color:var(--gold);font-size:1.3rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 25px;border-radius:50px;border:1px solid var(--gold);
+  transition:.3s;font-weight:700;font-size:.85rem;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(127,23,48,.12)}
+.btn.primary{background:var(--burgundy);color:#fff;border-color:var(--burgundy)}
+.btn.gold{background:var(--gold);color:#fff}
+.section{padding:95px 20px}
+.section-inner{width:min(1120px,100%);margin:auto}
+.heading{text-align:center;margin-bottom:48px}
+.heading .small{font-size:.68rem;letter-spacing:4px;font-weight:700;color:var(--burgundy)}
+.heading h2{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(2.8rem,7vw,5rem);
+  color:var(--burgundy-dark);font-weight:500;margin-top:5px;
+}
+.heading p{max-width:700px;margin:12px auto 0;color:var(--muted);line-height:1.9}
+.intro{background:#fff}
+.intro-card{
+  max-width:850px;margin:auto;padding:55px 35px;text-align:center;
+  border:1px solid #eadfcf;border-radius:28px;box-shadow:var(--shadow);
+  background:linear-gradient(145deg,#fff,#fffaf3);
+}
+.intro-card .quote{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,4vw,2.6rem);
+  font-style:italic;color:var(--burgundy);line-height:1.35;
+}
+.flyer-section{
+  background:var(--soft);
+}
+
+.flyer-grid{
+  width:min(1000px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.flyer-photo{
+  background:#fff;
+  padding:12px;
+  border:1px solid var(--gold-light);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:.3s ease;
+}
+
+.flyer-photo:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(70,35,40,.18);
+}
+
+.flyer-photo img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+/* =========================
+   FLYER
+========================= */
+
+@media(max-width:700px){
+  .flyer-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+}
+
+
+/* =========================
+   EVENT DETAILS
+========================= */
+
+.details{
+  background:#fff;
+  text-align:center;
+}
+
+.details .section-inner{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.details .heading{
+  width:100%;
+  text-align:center;
+  margin:0 auto 48px;
+}
+
+
+/* ---------- DESKTOP ---------- */
+
+.details-grid{
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:24px;
+
+  align-items:stretch;
+  justify-content:center;
+}
+
+.details-grid .card{
+  width:100%;
+  min-width:0;
+  min-height:220px;
+
+  padding:35px 20px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  background:#fff;
+  border:1px solid #eadfcf;
+  border-radius:25px;
+  box-shadow:var(--shadow);
+
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.details-grid .card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(70,35,40,.16);
+}
+
+.details-grid .card .icon{
+  font-size:2rem;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+.details-grid .card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:2rem;
+  color:var(--burgundy);
+  margin-bottom:10px;
+}
+
+.details-grid .card p{
+  color:var(--muted);
+  line-height:1.7;
+  text-align:center;
+  margin:0;
+}
+
+.details-grid .card strong{
+  color:var(--ink);
+}
+
+
+/* ---------- MAP BUTTON ---------- */
+
+.maps{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:18px;
+  padding:10px 18px;
+
+  border-radius:30px;
+
+  background:var(--burgundy);
+  color:#fff;
+
+  font-size:.72rem;
+  font-weight:700;
+
+  transition:.3s ease;
+}
+
+.maps:hover{
+  background:var(--gold);
+  transform:translateY(-2px);
+}
+
+
+/* =========================
+   TABLET
+   701px – 1024px
+========================= */
+
+@media (min-width:701px) and (max-width:1024px){
+
+  .details .section-inner{
+    max-width:900px;
+    padding:0 30px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .details-grid{
+    width:100%;
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+  }
+
+  .details-grid .card{
+    min-height:210px;
+    padding:30px 18px;
+  }
+
+  /* Center the third card */
+  .details-grid .card:nth-child(3){
+    grid-column:1 / -1;
+    width:calc(50% - 10px);
+    justify-self:center;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   700px AND BELOW
+========================= */
+
+@media (max-width:700px){
+
+  .details .section-inner{
+    width:100%;
+    max-width:100%;
+    padding:0 15px;
+  }
+
+  .details .heading{
+    margin-bottom:35px;
+  }
+
+  .details-grid{
+    width:100%;
+    max-width:430px;
+    margin-left:auto;
+    margin-right:auto;
+
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .details-grid .card{
+    width:100%;
+    min-height:190px;
+    padding:30px 20px;
+  }
+
+  .details-grid .card:nth-child(3){
+    grid-column:auto;
+    width:100%;
+  }
+
+  .details-grid .card h3{
+    font-size:1.9rem;
+  }
+}
+.dress-card{
+  width:min(800px,100%);margin:auto;text-align:center;padding:45px 25px;border-radius:30px;
+  border:1px solid #eadfcf;box-shadow:var(--shadow);background:#fff;
+}
+.white-circle{
+  width:115px;height:115px;border-radius:50%;background:#fff;margin:0 auto 20px;
+  border:1px solid #d9d9d9;box-shadow:0 12px 35px rgba(0,0,0,.10)
+}
+.dress-card h3{font-family:"Cormorant Garamond",serif;font-size:3rem;color:var(--burgundy)}
+.dress-card p{color:var(--muted);line-height:1.8;margin-top:8px}
+.countdown-section{padding:35px 20px 90px;background:var(--soft)}
+.countdown{
+  width:min(920px,100%);margin:auto;padding:32px 20px;background:#fff;border:1px solid #eadfcf;
+  border-radius:28px;box-shadow:var(--shadow);text-align:center
+}
+.count-label{font-size:.68rem;letter-spacing:3px;font-weight:700;color:var(--burgundy);margin-bottom:20px}
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.count-box{background:#fbf7ef;border:1px solid #eadfcf;border-radius:18px;padding:18px 8px}
+.count-num{font-family:"Cormorant Garamond",serif;font-size:clamp(2.3rem,7vw,4rem);font-weight:600;color:var(--burgundy-dark)}
+.count-unit{display:block;color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:2px;margin-top:5px}
+.actions{
+  background:var(--burgundy-dark);color:#fff;text-align:center
+}
+.white-circle {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #f2f2f2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.actions .heading h2{color:#fff}.actions .heading p{color:#dfd0d2}
+.action-row{display:flex;flex-wrap:wrap;justify-content:center;gap:13px}
+.action-row .btn{min-width:220px}
+.whatsapp{background:#25D366;border-color:#25D366;color:#fff}
+.share{background:transparent;color:#fff;border-color:#d8b873}
+footer{padding:28px 20px;text-align:center;background:#2b0b14;color:#d8c8ca;font-size:.72rem;letter-spacing:1px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.details-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+  .section{padding:75px 15px}
+  .details-grid{grid-template-columns:1fr}
+  .count-grid{gap:7px}.count-box{padding:15px 4px}
+  .count-unit{font-size:.5rem;letter-spacing:1px}
+  .hero-inner{padding:65px 12px}
+  .action-row{flex-direction:column;align-items:center}.action-row .btn{width:min(100%,360px)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Back to previous page -->
+<a href="index.html" class="back-btn" aria-label="Go back">
+  <span>←</span>
+</a>
+
+<!-- Music button -->
+<button class="music-btn" id="musicBtn" aria-label="Play or pause memorial music">
+  ♫
+</button>
+
+<audio id="memorialMusic" src="memorial-music.mp3" loop preload="auto"></audio>
+
+<header class="hero" id="home">
+  <div class="ornament o1">❦</div><div class="ornament o2">❦</div><div class="ornament o3">❦</div>
+  <div class="hero-inner">
+    <div class="eyebrow">YOU ARE CORDIALLY INVITED</div>
+
+   <h2>ANNIVERSARY</h2>
+    <div class="divider"><span>✦</span></div>
+    <div class="memory">IN LOVING MEMORY OF</div>
+    <div class="name">
+  Late Wilhelmina Akua<br>
+  Ampofoa Yirenkyi
+  <br><br>
+  &amp;
+  <br><br>
+  Late Christian Saampah<br>
+  Yirenkyi
+</div>
+    <div class="hero-date">SUNDAY · 4TH OCTOBER · 2026 · 1:00 PM</div>
+
+<div class="details-btn-wrap">
+  <a class="details-btn" href="#intro">
+    <span>VIEW DETAILS</span>
+    <span class="details-arrow">↓</span>
+  </a>
+</div>
+</header>
+
+<section class="section intro reveal" id="intro">
+  <div class="section-inner">
+
+    <div class="heading">
+      <div class="small">A LOVING REMEMBRANCE</div>
+      <h2>Forever Remembered</h2>
+    </div>
+
+    <div class="intro-card">
+      <div class="quote">
+        “Those we love don’t go away, they walk beside us every day.”
+      </div>
+
+      <p>
+        With grateful hearts and cherished memories, family and friends warmly invite you
+        to join us as we commemorate the one-year anniversary of the passing of our beloved
+        <strong>Late Wilhelmina Akua Ampofoa Yirenkyi &amp; Late Christian Saampah Yirenkyi</strong>.
+      </p>
+
+      <div class="divider">
+        <span>❦</span>
+      </div>
+
+      <p>
+        Their lives were blessings, their memories treasures, and they remain forever in our hearts.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section flyer-section reveal" id="flyer">
+  <div class="section-inner">
+
+    <div class="heading">
+      <div class="small">ANNIVERSARY INVITATION</div>
+      <h2>Invitation Flyer</h2>
+      <p>In loving memory and remembrance.</p>
+    </div>
+
+    <div class="flyer-grid">
+
+      <!-- Picture 1 -->
+      <div class="flyer-photo">
+        <img src="memorial-flyer.png"
+             alt="Wilhelmina Akua Ampofoa Yirenkyi Memorial Flyer">
+      </div>
+
+      <!-- Picture 2 -->
+      <div class="flyer-photo">
+        <img src="memorial-photo-2.png"
+             alt="Memorial Anniversary Photo">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section details reveal" id="details">
+  <div class="section-inner">
+
+    <div class="heading">
+      <div class="small">PLEASE SAVE THE DATE</div>
+      <h2>Event Details</h2>
+    </div>
+
+    <div class="details-grid">
+
+      <!-- Date -->
+      <div class="card">
+        <div class="icon">◷</div>
+        <h3>Date</h3>
+        <p>
+          Sunday<br>
+          <strong>4th October, 2026</strong>
+        </p>
+      </div>
+
+      <!-- Time -->
+      <div class="card">
+        <div class="icon">⌚</div>
+        <h3>Time</h3>
+        <p>
+          <strong>1:00 PM</strong><br>
+          Prompt
+        </p>
+      </div>
+
+      <!-- Venue -->
+      <div class="card">
+        <div class="icon">⌖</div>
+        <h3>Venue</h3>
+        <p>
+          <strong>Sakumono MPs Flat D</strong>
+        </p>
+
+        <a
+          class="maps"
+          href="https://maps.app.goo.gl/aTCodpXqdXtS6ca56?g_st=it"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📍 Get Directions
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="section dress reveal">
+  <div class="section-inner">
+    <div class="heading">
+      <div class="small">DRESS CODE</div>
+      <h2>All White</h2>
+    </div>
+    <div class="dress-card">
+      <div class="white-circle"></div>
+      <h3>Wear White</h3>
+      <p>In honour and remembrance, guests are kindly requested to attend in an all-white outfit.</p>
+    </div>
+  </div>
+</section>
+
+<section class="countdown-section reveal">
+  <div class="countdown">
+    <div class="count-label">COUNTING DOWN TO THE ANNIVERSARY</div>
+    <div class="count-grid" id="countGrid">
+      <div class="count-box"><span class="count-num" id="days">00</span><span class="count-unit">DAYS</span></div>
+      <div class="count-box"><span class="count-num" id="hours">00</span><span class="count-unit">HOURS</span></div>
+      <div class="count-box"><span class="count-num" id="minutes">00</span><span class="count-unit">MINUTES</span></div>
+      <div class="count-box"><span class="count-num" id="seconds">00</span><span class="count-unit">SECONDS</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section actions reveal" id="rsvp">
+  <div class="section-inner">
+    <div class="heading">
+      <div class="small" style="color:#d8b873">JOIN US</div>
+      <h2>We Would Be Honoured</h2>
+      <p>Your presence, prayers and support will mean a great deal to the family as we remember a life so dearly loved.</p>
+    </div>
+
+    <div class="action-row">
+      <a class="btn whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener">💬 RSVP on WhatsApp</a>
+      <button class="btn share" id="shareBtn" type="button">🔗 Share Invitation</button>
+      <a class="btn gold" href="#home">↑ Back to Top</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  In loving memory of Late Wilhelmina Akua Ampofoa Yirenkyi · 1 Year Anniversary · 2026
+</footer>
+
+<script>
+const musicBtn = document.getElementById("musicBtn");
+const music = document.getElementById("memorialMusic");
+
+let playing = false;
+let wasPlayingBeforeHidden = false;
+
+async function playMusic() {
+  try {
+    await music.play();
+    playing = true;
+    musicBtn.textContent = "❚❚";
+  } catch (e) {
+    playing = false;
+    musicBtn.textContent = "♫";
+  }
+}
+
+function pauseMusic() {
+  music.pause();
+  playing = false;
+  musicBtn.textContent = "♫";
+}
+
+/* Start music after the user's first interaction */
+document.addEventListener("click", function firstInteraction() {
+  if (!playing) {
+    playMusic();
+  }
+  document.removeEventListener("click", firstInteraction);
+}, { once: true });
+
+/* Music button */
+musicBtn.addEventListener("click", async (e) => {
+  e.stopPropagation();
+
+  if (playing) {
+    pauseMusic();
+  } else {
+    await playMusic();
+  }
+});
+
+/* Pause when the user leaves the tab */
+document.addEventListener("visibilitychange", () => {
+
+  if (document.hidden) {
+
+    // Remember whether music was actually playing
+    wasPlayingBeforeHidden = !music.paused;
+
+    if (wasPlayingBeforeHidden) {
+      music.pause();
+      playing = false;
+      musicBtn.textContent = "♫";
+    }
+
+  } else {
+
+    // Resume only if it was playing before the tab was hidden
+    if (wasPlayingBeforeHidden) {
+      playMusic();
+    }
+
+  }
+  });
+
+const eventDate=new Date(2026,9,4,13,0,0);
+function updateCountdown(){
+  const diff=eventDate-new Date();
+  const grid=document.getElementById("countGrid");
+  if(diff<=0){
+    grid.innerHTML='<div style="grid-column:1/-1;font-family:Cormorant Garamond,serif;font-size:2rem;color:#7f1730">Today we remember and celebrate her beautiful life. ♥</div>';
+    return;
+  }
+  const total=Math.floor(diff/1000);
+  const d=Math.floor(total/86400);
+  const h=Math.floor((total%86400)/3600);
+  const m=Math.floor((total%3600)/60);
+  const s=total%60;
+  document.getElementById("days").textContent=String(d).padStart(2,"0");
+  document.getElementById("hours").textContent=String(h).padStart(2,"0");
+  document.getElementById("minutes").textContent=String(m).padStart(2,"0");
+  document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+const message=encodeURIComponent("Hello, I would like to RSVP for the  Anniversary in loving memory of Late Wilhelmina Akua Ampofoa Yirenkyi and  Late Christian Saampah Yirenkyi  on 4th October 2026 at 1:00 PM. Thank you.");
+document.getElementById("whatsappBtn").href="https://wa.me/233200721999?text="+message;
+
+document.getElementById("shareBtn").addEventListener("click",async()=>{
+  const data={
+    title:"1 Year Anniversary | Late Wilhelmina Akua Ampofoa Yirenkyi",
+    text:"You are invited to the 1 Year Anniversary in loving memory of Late Wilhelmina Akua Ampofoa Yirenkyi — 4th October 2026 at 1:00 PM, Sakumono MPs Flat D.",
+    url:window.location.href
+  };
+  if(navigator.share){
+    try{await navigator.share(data);}catch(e){}
+  }else{
+    try{
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Invitation link copied to your clipboard.");
+    }catch(e){alert("Please copy the page link from your browser to share the invitation.");}
+  }
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add("visible");});
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
