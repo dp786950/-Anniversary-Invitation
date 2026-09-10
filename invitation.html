@@ -1750,7 +1750,7 @@ footer{
       <a
         class="btn whatsapp"
         id="whatsappBtn"
-        href="https://wa.me/233200721999?text=Hello%2C%20I%20would%20like%20to%20RSVP%20for%20the%20memorial%20anniversary."
+        href="#"
         target="_blank"
         rel="noopener"
       >
@@ -2254,21 +2254,14 @@ setInterval(
 ===================================================== */
 
 const whatsappBtn =
-  document.getElementById(
-    "whatsappBtn"
-  );
-
+  document.getElementById("whatsappBtn");
 
 const whatsappMessage =
-  "Hello, I would like to RSVP for the Memorial Anniversary of Late Wilhelmina Akua Ampofoa Yirenkyi and Late Christian Saampah Yirenkyi on Sunday, 4th October 2026 at Sakumono MPs Flat D.";
-
+  "Hello, I would like to make RSVP for the Memorial Anniversary";
 
 whatsappBtn.href =
-  "https://wa.me/?text=" +233200721999
-  encodeURIComponent(
-    whatsappMessage
-  );
-
+  "https://wa.me/233200721999?text=" +
+  encodeURIComponent(whatsappMessage);
 
 /* =====================================================
    SHARE INVITATION
