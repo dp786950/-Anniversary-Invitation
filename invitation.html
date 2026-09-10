@@ -2239,57 +2239,7 @@ const shareBtn = document.getElementById("shareBtn");
 shareBtn.addEventListener("click", async function () {
 
 
-  const shareData = {
-    title: "Memorial Anniversary Invitation",
-
-    text: `🕊️ *IN LOVING MEMORY* 🕊️
-
-🌹 *You Are Cordially Invited* 🌹
-
-to commemorate the
-
-🕯️ *1st Anniversary of*
-*Late Wilhelmina Akua Ampofoa Yirenkyi*
-
-&
-
-🕯️ *5th Anniversary of*
-*Late Christian Saampah Yirenkyi*
-
-💐 _Forever loved, forever remembered._ ❤️
-
-📍 *For further information and Google Maps location:*
-
-👇👇 *View Invitation & Get Directions* 👇👇
-https://dp786950.github.io/-Anniversary-Invitation/`,
-
-    url: "https://dp786950.github.io/-Anniversary-Invitation/"
-  };
-
-  try {
-
-    if (navigator.share) {
-
-      await navigator.share(shareData);
-
-    } else {
-
-      await navigator.clipboard.writeText(
-        shareData.url
-      );
-
-      alert("Invitation link copied!");
-
-    }
-
-  } catch (error) {
-
-    console.log("Sharing cancelled.");
-
-  }
-
-});
-
+ const shareData = { title: "Memorial Anniversary Invitation", text: `🕊️ *IN LOVING MEMORY* 🕊️ 🌹 *You Are Cordially Invited* 🌹 To commemorate the: 🕯️ *1st Anniversary of* *Late Wilhelmina Akua Ampofoa Yirenkyi* & 🕯️ *5th Anniversary of* *Late Christian Saampah Yirenkyi* 💐 _Forever loved, forever remembered._ ❤️ 📍 *For further information & Google Maps location:* 👇 *View Invitation & Get Directions* 👇 https://dp786950.github.io/-Anniversary-Invitation/`, url: "https://dp786950.github.io/-Anniversary-Invitation/" }; try { if (navigator.share) { await navigator.share(shareData); } else { await navigator.clipboard.writeText(shareData.url); alert("Invitation link copied!"); } } catch (error) { console.log("Sharing cancelled."); } });
 
 /* =====================================================
    SCROLL REVEAL
