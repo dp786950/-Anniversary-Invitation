@@ -2238,6 +2238,11 @@ const shareBtn = document.getElementById("shareBtn");
 
 shareBtn.addEventListener("click", async function () {
 
+const shareBtn = document.getElementById("shareBtn");
+
+shareBtn.addEventListener("click", async function () {
+
+ ```javascript
 const shareData = {
   title: "Memorial Anniversary Invitation",
   text: `🕊️ *IN LOVING MEMORY* 🕊️
@@ -2257,7 +2262,9 @@ to commemorate the
 💐 _Forever loved, forever remembered._ ❤️
 
 📍 *For further information and Google Maps location:*
-Click the link below 👇👇`,
+
+👇👇 *View Invitation & Get Directions* 👇👇
+https://dp786950.github.io/-Anniversary-Invitation/`,
   url: "https://dp786950.github.io/-Anniversary-Invitation/"
 };
 
@@ -2271,7 +2278,7 @@ try {
 } catch (error) {
   console.log("Sharing cancelled.");
 }
-
+});
 
 /* =====================================================
    SCROLL REVEAL
