@@ -2238,9 +2238,9 @@ const shareBtn = document.getElementById("shareBtn");
 
 shareBtn.addEventListener("click", async function () {
 
-  const shareData = {
-    title: "Memorial Anniversary Invitation",
-    text: `🕊️ *IN LOVING MEMORY* 🕊️
+const shareData = {
+  title: "Memorial Anniversary Invitation",
+  text: `🕊️ *IN LOVING MEMORY* 🕊️
 
 🌹 *You Are Cordially Invited* 🌹
 
@@ -2254,23 +2254,24 @@ to commemorate the
 🕯️ *5th Anniversary of*
 *Late Christian Saampah Yirenkyi*
 
-💐 _Forever loved, forever remembered._ ❤️`,
-    📍 *For further information and Google Maps location:* Click the link below 👇👇`,
-    url: "https://dp786950.github.io/-Anniversary-Invitation/"
-  };
+💐 _Forever loved, forever remembered._ ❤️
 
-  try {
-    if (navigator.share) {
-      await navigator.share(shareData);
-    } else {
-      await navigator.clipboard.writeText(shareData.url);
-      alert("Invitation link copied!");
-    }
-  } catch (error) {
-    console.log("Sharing cancelled.");
+📍 *For further information and Google Maps location:*
+Click the link below 👇👇`,
+  url: "https://dp786950.github.io/-Anniversary-Invitation/"
+};
+
+try {
+  if (navigator.share) {
+    await navigator.share(shareData);
+  } else {
+    await navigator.clipboard.writeText(shareData.url);
+    alert("Invitation link copied!");
   }
+} catch (error) {
+  console.log("Sharing cancelled.");
+}
 
-});
 
 /* =====================================================
    SCROLL REVEAL
