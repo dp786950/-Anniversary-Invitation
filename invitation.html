@@ -2240,9 +2240,14 @@ shareBtn.addEventListener("click", async function () {
 
  
 ```javascript
-const shareData = {
-  title: "Memorial Anniversary Invitation",
-  text: `🕊️ *IN LOVING MEMORY* 🕊️
+const shareBtn = document.getElementById("shareBtn");
+
+shareBtn.addEventListener("click", async function () {
+
+  const shareData = {
+    title: "Memorial Anniversary Invitation",
+
+    text: `🕊️ *IN LOVING MEMORY* 🕊️
 
 🌹 *You Are Cordially Invited* 🌹
 
@@ -2259,22 +2264,52 @@ to commemorate the
 💐 _Forever loved, forever remembered._ ❤️
 
 📍 *For further information and Google Maps location:*
-👇👇 *View Invitation & Get Directions* 👇👇
-https://dp786950.github.io/-Anniversary-Invitation/`,
-  url: "https://dp786950.github.io/-Anniversary-Invitation/"
-};
 
-try {
-  if (navigator.share) {
-    await navigator.share(shareData);
-  } else {
-    await navigator.clipboard.writeText(shareData.url);
-    alert("Invitation link copied!");
+👇👇 *View Invitation & Get Directions* 👇👇
+
+https://dp786950.github.io/-Anniversary-Invitation/`,
+
+    url: "https://dp786950.github.io/-Anniversary-Invitation/"
+  };
+
+  try {
+
+    if (navigator.share) {
+
+      await navigator.share(shareData);
+
+    } else {
+
+      await navigator.clipboard.writeText(
+        shareData.url
+      );
+
+      alert("Invitation link copied!");
+
+    }
+
+  } catch (error) {
+
+    if (error.name !== "AbortError") {
+
+      console.error(
+        "Sharing failed:",
+        error
+      );
+
+    } else {
+
+      console.log(
+        "Sharing cancelled."
+      );
+
+    }
+
   }
-} catch (error) {
-  console.log("Sharing cancelled.");
-}
+
+});
 ```
+
 
 
 /* =====================================================
