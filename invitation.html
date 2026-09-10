@@ -2235,78 +2235,33 @@ whatsappBtn.href =
   "https://wa.me/233200721999?text=" +
   encodeURIComponent(whatsappMessage);
 
-/* =====================================================
-   SHARE INVITATION
-===================================================== */
+// Share Invitation
+const shareBtn = document.getElementById("shareBtn");
 
-const shareBtn =
-  document.getElementById(
-    "shareBtn"
-  );
+shareBtn.addEventListener("click", async function () {
+  const shareUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "/index.html");
 
+  const shareData = {
+    title: "Memorial Anniversary Invitation",
+    text: "You are warmly invited to join us in remembering and celebrating the lives of our loved ones.",
+    url: shareUrl
+  };
 
-shareBtn.addEventListener(
-  "click",
-  async function(){
-
-    const shareData = {
-
-      title:
-        "Memorial Anniversary Invitation",
-
-      text:
-        "You are cordially invited to commemorate the one-year anniversary of Late Wilhelmina Akua Ampofoa Yirenkyi and the five-year anniversary of Late Christian Saampah Yirenkyi.",
-
-      url:
-        window.location.href
-
-    };
-
-
-    if(
-      navigator.share
-    ){
-
-      try{
-
-        await navigator.share(
-          shareData
-        );
-
-      }catch(error){
-
-        console.log(
-          "Share cancelled."
-        );
-
-      }
-
-    }else{
-
-      try{
-
-        await navigator.clipboard.writeText(
-          window.location.href
-        );
-
-        alert(
-          "Invitation link copied to clipboard."
-        );
-
-      }catch(error){
-
-        alert(
-          "Please copy the invitation link from your browser."
-        );
-
-      }
-
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (error) {
+      console.log("Sharing cancelled.");
     }
-
+  } else {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      alert("Invitation link copied!");
+    } catch (error) {
+      alert("Unable to copy invitation link.");
+    }
   }
-);
-
-
+});
 /* =====================================================
    SCROLL REVEAL
 ===================================================== */
