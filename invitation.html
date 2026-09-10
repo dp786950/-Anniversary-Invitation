@@ -2262,33 +2262,7 @@ shareBtn.addEventListener("click", async function () {
     }
   }
 });
-  // Share Invitation
-const shareBtn = document.getElementById("shareBtn");
-
-shareBtn.addEventListener("click", async function () {
-  const shareUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "/index.html");
-
-  const shareData = {
-    title: "Memorial Anniversary Invitation",
-    text: "You are warmly invited to join us in remembering and celebrating the lives of our loved ones.",
-    url: shareUrl
-  };
-
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-    } catch (error) {
-      console.log("Sharing cancelled.");
-    }
-  } else {
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      alert("Invitation link copied!");
-    } catch (error) {
-      alert("Unable to copy invitation link.");
-    }
-  }
-});
+  
 /* =====================================================
    SCROLL REVEAL
 ===================================================== */
