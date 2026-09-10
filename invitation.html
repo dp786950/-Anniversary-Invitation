@@ -1750,7 +1750,7 @@ footer{
       <a
         class="btn whatsapp"
         id="whatsappBtn"
-        href="#"
+        href="https://wa.me/233200721999?text=Hello%20I%20%26%20Esther%2C%20I%20would%20like%20to%20RSVP%20for%20your%20Memorial%20Anniversary.%20Thank%20you."
         target="_blank"
         rel="noopener"
       >
@@ -1975,51 +1975,6 @@ musicBtn.addEventListener(
 );
 
 
-/* =====================================================
-   CLICK ANYWHERE TO START MUSIC
-===================================================== */
-
-document.addEventListener(
-  "click",
-  function (event) {
-
-    if (
-      event.target.closest("#musicBtn")
-    ) {
-      return;
-    }
-
-    if (!playing) {
-      startMusic();
-    }
-
-  }
-);
-
-
-/* =====================================================
-   TOUCH ANYWHERE TO START MUSIC
-===================================================== */
-
-document.addEventListener(
-  "touchstart",
-  function (event) {
-
-    if (
-      event.target.closest("#musicBtn")
-    ) {
-      return;
-    }
-
-    if (!playing) {
-      startMusic();
-    }
-
-  },
-  {
-    passive: true
-  }
-);
 
 
 /* =====================================================
