@@ -1313,23 +1313,25 @@ footer{
 
     <div class="details-btn-wrap">
 
-      <a
-        class="details-btn"
-        href="#intro"
-      >
+     <div class="details-btn-wrap">
 
-        <span>
-          VIEW DETAILS
-        </span>
+  <a
+    class="details-btn"
+    id="viewDetailsBtn"
+    href="#intro"
+  >
 
-        <span class="details-arrow">
-          ↓
-        </span>
+    <span>
+      VIEW DETAILS
+    </span>
 
-      </a>
+    <span class="details-arrow">
+      ↓
+    </span>
 
-    </div>
+  </a>
 
+</div>
   </div>
 
 </header>
@@ -1924,6 +1926,21 @@ function startMusic() {
     });
 
 }
+  /* =====================================================
+   VIEW DETAILS - START MUSIC
+===================================================== */
+
+const viewDetailsBtn =
+  document.getElementById("viewDetailsBtn");
+
+viewDetailsBtn.addEventListener(
+  "click",
+  function () {
+
+    startMusic();
+
+  }
+);
 
 
 /* =====================================================
